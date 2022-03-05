@@ -1,0 +1,5 @@
+com.sun.net.httpserver is not API (there is an access restriction, and Eclipse indicate this as error).
+
+You need to add an access rule "Accessible" for the pattern com/sun/net/httpserver/**:
+
+Add Access Rule
