@@ -1,0 +1,17 @@
+avoiding circular wait
+circular wait - a chain of at least two threads each one is holding one resource and waiting for another resource.
+
+
+acquire the locks in the same order.
+
+
+if locks are in huge amount of size then we can use a watchdog
+restart threads if register value is not what is expected
+
+thread interruption ( not possible with synchronized)
+
+check if lock is already acquired by another thread
+tryLock operation( not possible with synchronized)
+
+
+

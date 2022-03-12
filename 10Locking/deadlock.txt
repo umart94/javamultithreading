@@ -1,0 +1,12 @@
+a deadlock is a situation where everyone is  trying to make progress
+but cannot because they are waiting for another party to make a move.
+
+
+mutual exclusion - only one thread can have exclusive access to a resource
+hold and wait - at least one thread is holding a resource and is waiting for
+another resource
+
+non premptive allocation - a resource is released only after the thread is done using it
+
+circular wait - a chain of at least two threads each one is holding one resource and waiting for another resource.
+

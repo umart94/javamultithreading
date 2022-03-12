@@ -1,0 +1,11 @@
+fine grained locking - seperate lock for each shared resource
+
+
+
+coarse grained locking - 1 shared lock for all shared resources
+
+
+
+
+the problem we run into when we have multiple locks is called a deadlock
+

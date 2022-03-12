@@ -1,0 +1,49 @@
+all reference assignments are atomic
+we can get and set references to objects atomically
+
+
+
+Object a = new Object();
+Object b = new Object();
+a = b; // atomic
+
+GETTERS AND SETTERS ARE ATOMIC.
+
+
+
+
+
+
+
+
+
+
+all assignments to primitive types( except long and doubles)
+are atomic
+that means reading from, and writing to following types:
+
+int
+short
+byte
+float
+char
+boolean
+
+are thread safe
+
+
+
+long and double are 64 bit long, so they are not thread safe and NOT ATOMIC
+
+java provides us with a solution
+
+volatile double x = 1.0;
+volatile double y = 9.0;
+
+x = y; // atomic
+
+atomic means that in other words read and write to these variables will be performed with a single hardware
+operation.
+
+
+

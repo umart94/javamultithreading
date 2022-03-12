@@ -1,0 +1,11 @@
+invariant means never changing
+
+here the condition if(y>x) is invariant
+
+
+
+
+solution is : 
+
+synchronization of methods which modify shared variables
+declaration of shared variables with volatile keyword
