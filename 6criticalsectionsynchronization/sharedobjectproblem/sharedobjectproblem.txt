@@ -1,0 +1,5 @@
+two threads sharing the same items counter
+both threads reading and modifying that counter at the same time
+operations were not atomic
+
+

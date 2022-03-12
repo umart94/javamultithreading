@@ -1,0 +1,138 @@
+synchronized keyword
+
+locking mechanism
+used to restrict access to a critical section or entire method to a single thread at a time
+
+
+
+there are two ways to declare it :
+
+
+1. Synchronized - Monitor
+
+
+public class ClassWithCriticalSections{
+
+public synchronized method1(){
+}
+
+public synchronized method2(){
+}
+
+
+}
+
+
+suppose that thread 1 is executing method1
+
+and thread 2 wants to execute method1 and method2
+
+thread 2 cannot execute method1 or method2 because 
+
+SYNCHRONIZED IS APPLIED PER OBJECT , THE TERM FOR THAT IS CALLED A MONITOR
+
+
+
+
+2. Synchronized - Lock
+
+define block of code we consider critical section
+use synchronized keyword to restrict access only to that section
+without making the entire method synchronized
+
+
+we need to create a object to synchronize on 
+which will serve as a LOCK
+
+THAT CAN BE ANY OBJECT INSIDE THE CLASS
+
+ANY SYNCHRONIZED BLOCK WHICH IS SYNCHRONIZED ON SAME OBJECT WILL ALLOW ONLY 1 THREAD TO EXECUTE INSIDE THAT BLOCK
+
+
+
+
+
+
+
+
+in method 1 - 1. Synchronized - Monitor
+
+public synchronized method1(){
+}
+
+is logically equivalent to : 
+
+
+public void method1(){
+
+synchronized(this){
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+in method 2 2. Synchronized - Lock
+
+
+public ClassWithCriticalSections{
+Object lock1 = new Object();
+Object lock2 = new Object();
+
+
+public void method1(){
+critical section
+synchronized(lock1){
+
+}
+}
+
+
+public void method2(){
+critical section
+synchronized(lock2){
+
+}
+
+}
+
+
+}
+
+
+thread A for example can access method1 with lock1
+
+thread b can access method2 with lock2
+
+threadb cannot access method1 with lock1 until threada has exited the critical section
+
+notice that both method1 and method2 are whats called critical sections 
+
+
+
+another benefit is that we dont have to synchronize the entire method
+
+we can synchronize bare minimum amount of code to be synchronized
+
+
+
+
+
+
+
+
+the synchronized block is whats called Reentrant
+
+a thread cannot prevent itself from entering a critical section
+
+if THREAD A IS ACCESSING A SYNCHRONIZED METHOD WHILE ALREADY BEING IN A DIFFERENT SYNCHRONIZED METHOD
+OR BLOCK IT WILL BE ABLE TO ACCESS THAT SYNCHRONIZED METHOD WITHOUT ANY PROBLEM.

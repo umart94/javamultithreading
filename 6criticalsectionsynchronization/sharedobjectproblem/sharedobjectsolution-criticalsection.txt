@@ -1,0 +1,25 @@
+perform set of operations in such a way that they will appear as if we performed a single atomic operation
+and no two threads will be performing that operation simultaneously.
+
+
+lets call this section of code that we must protect from concurrent execution a critical section
+
+surround it with an entry point and exit point
+
+
+void FUNCTION(){
+ENTER CRITICAL SECTION
+operation1();
+operation2();
+operation3();
+EXIT CRITICAL SECTION
+}
+
+
+if there is no thread that is currently executing critical section
+then that thread can enter critical section and execute operations 1 2 and 3
+
+if another thread tries to enter critical section it will be suspended and denied access
+UNTIL THREAD 1 has not finished execution on critical section
+
+once thread 1 exits critical section , thread 2 can enter critical section and perform operations then.

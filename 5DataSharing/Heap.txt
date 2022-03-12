@@ -1,0 +1,31 @@
+heap is a shared memory region that belongs to a process
+all the threads share whatever data is allocated on the heap
+and can access and allocate variables on the heap at any moment
+
+
+what is allocated on the heap
+
+
+. all objects are stored on the heap ( anything created with new operator)
+. members of classes
+. static variables ( are actually members of class)
+
+
+heap is managed by garbage collector
+
+objects stay as long as we have a reference to them ( same lifecycle as their parents)
+
+static variables ( stay forever)
+
+
+reference is not equal to object.
+
+
+Object referenceVar1 = new Object();
+Object referenceVar2 = referenceVar1; 
+
+
+if references are declared inside a method they are allocated on the stack
+
+can be allocated on the heap if they are members of a class.
+

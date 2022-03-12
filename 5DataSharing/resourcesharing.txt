@@ -1,0 +1,21 @@
+resource ? 
+
+a variable such as integer or string
+data structure
+file or connection handles
+message or work queues
+any objects
+
+
+
+
+1 thread calls dispatcher thread that takes work as an input
+either directly from user or through http requests if its a web server
+
+distributes work among a small number of dedicated worker threads using a shared queue
+
+the worker threads are waiting for work to arrive through the queue and grab the task from it
+as soon as they finish the current task
+
+that queue is basically a data structure stored on the heap and is accessible by worker threads.
+
